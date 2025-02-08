@@ -9,11 +9,11 @@ public class TreeNode {
    public   TreeNode right;
  
 
-    TreeNode() {
+    public TreeNode() {
     }
  
 
-    TreeNode(int val) {
+    public TreeNode(int val) {
         this.val = val;
     }
  
