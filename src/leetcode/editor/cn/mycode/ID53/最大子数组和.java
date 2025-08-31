@@ -43,5 +43,17 @@ public class 最大子数组和 {
         return max;
     }
 
+    public int maxSubArray3(int[] nums) {
+        //如果前面的数组和是负数，那么无论当前的数是正数还是负数，使用当前的数作为新的数组开头，
+        // 得到的结果都比前面的数组和加上当前数组大
+        int max=Integer.MIN_VALUE;
+        int sum=0;
+        for (int num : nums) {
+            sum=sum>0?sum+num:num;
+            max=Math.max(sum,max);
+        }
 
+
+        return max;
+    }
 }
