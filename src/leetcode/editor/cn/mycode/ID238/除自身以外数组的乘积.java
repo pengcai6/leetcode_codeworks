@@ -9,6 +9,7 @@ public class 除自身以外数组的乘积 {
             int[] least = new int[n];
             first[0]=1;
             least[n-1]=1;
+            //维护两个数组，一个前缀积数组，一个后缀积数组，两次遍历即可
             for (int i = 1; i < n; i++) {
                 first[i]=first[i-1]*nums[i-1];
             }
@@ -31,6 +32,7 @@ public class 除自身以外数组的乘积 {
             for (int i = 1; i < n; i++) {
                 first[i] = first[i - 1] * nums[i - 1];
             }
+            //不新开后缀数组，而是使用遍历的时候累积后缀积R
             for (int i = n - 1; i >= 0; i--) {
                 first[i] *= R;
                 R *= nums[i];
